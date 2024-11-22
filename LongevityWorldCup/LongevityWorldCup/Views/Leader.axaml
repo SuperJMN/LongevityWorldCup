@@ -2,8 +2,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:longevityWorldCup="clr-namespace:LongevityWorldCup"
              mc:Ignorable="d" d:DesignWidth="240"
-             x:Class="LongevityWorldCup.Views.Leader" d:DesignHeight="400" ClipToBounds="False">
+             x:Class="LongevityWorldCup.Views.Leader" d:DesignHeight="400" ClipToBounds="False" x:DataType="longevityWorldCup:Athlete">
+    
+    <Design.DataContext>
+        <longevityWorldCup:Athlete Name="Isabella Rodriguez" Picture="/Assets/isabella_rodriguez_profile.jpg.jpg" />
+    </Design.DataContext>
+    
     <Button CornerRadius="30" Classes="Shadowed" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Panel>
             <DockPanel>
@@ -13,7 +19,7 @@
                 </StackPanel>
                 <StackPanel Margin="0 25 0 0 " x:Name="Profile" Spacing="15">
                     <Panel>
-                        <Image Height="100" Source="/Assets/isabella_rodriguez_profile.jpg">
+                        <Image Height="100" Source="{Binding Picture}">
                             <Image.Clip>
                                 <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
                             </Image.Clip>
@@ -21,10 +27,10 @@
                         <Ellipse Width="100" Height="100" Stroke="#FF4081" StrokeThickness="2" />
                     </Panel>
                     <StackPanel HorizontalAlignment="Center">
-                        <Button Classes="Hyperlink" HorizontalAlignment="Center" Background="Transparent" BorderThickness="0">Isabella Rodriguez</Button>
+                        <Button Classes="Hyperlink" HorizontalAlignment="Center" Background="Transparent" BorderThickness="0" Content="{Binding Name}" />
                         <TextBlock>
                             <TextBlock.Inlines>
-                                <Run FontWeight="Bold" Foreground="{StaticResource Green}" Text="16.3 years" />
+                                <Run FontWeight="Bold" Foreground="{StaticResource Green}" Text="{Binding AgeReduction, StringFormat='{}{0:+0.0;-0.0} years'}" />
                                 <Run Text="reduced" />
                             </TextBlock.Inlines>
                         </TextBlock>

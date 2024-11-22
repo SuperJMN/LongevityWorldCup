@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:LongevityWorldCup.Views"
+             xmlns:longevityWorldCup="clr-namespace:LongevityWorldCup"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="380"
              x:Class="LongevityWorldCup.Views.Podium">
     <UniformGrid Rows="1">
@@ -11,8 +12,20 @@
                 <Setter Property="Margin" Value="20"></Setter>
             </Style>
         </UniformGrid.Styles>
-        <views:Leader  />
-        <views:Leader  />
-        <views:Leader  />
+        <views:Leader>
+            <views:Leader.DataContext>
+                <longevityWorldCup:Athlete Name="Isabella Rodriguez" AgeReduction="16.3" Picture="/Assets/isabella_rodriguez_profile.jpg" />
+            </views:Leader.DataContext>
+        </views:Leader>
+        <views:Leader>
+            <views:Leader.DataContext>
+                <longevityWorldCup:Athlete Name="Emma Johansson" AgeReduction="20.7" Picture="/Assets/emma_johansson_profile.jpg" />
+            </views:Leader.DataContext>
+        </views:Leader>
+        <views:Leader>
+            <views:Leader.DataContext>
+                <longevityWorldCup:Athlete Name="Isabella Rodriguez" AgeReduction="14.6" Picture="/Assets/maria_gonzalez_profile.jpg" />
+            </views:Leader.DataContext>
+        </views:Leader>
     </UniformGrid>
 </UserControl>

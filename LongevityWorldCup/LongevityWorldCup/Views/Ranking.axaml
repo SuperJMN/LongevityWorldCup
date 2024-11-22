@@ -1,0 +1,76 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:m="clr-namespace:LongevityWorldCup"
+             xmlns:generic="clr-namespace:System.Collections.Generic;assembly=System.Collections"
+             xmlns:views="clr-namespace:LongevityWorldCup.Views"
+             mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="450" Foreground="{StaticResource Blue}"
+             x:Class="LongevityWorldCup.Views.Ranking">
+    <StackPanel>
+        <Border Background="#E5F8FB">
+            <Grid TextElement.FontSize="16" TextElement.FontWeight="Bold" Margin="30 20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="Rank" />
+                    <ColumnDefinition SharedSizeGroup="Picture" />
+                    <ColumnDefinition SharedSizeGroup="Athlete" />
+                    <ColumnDefinition SharedSizeGroup="Sponsor" />
+                    <ColumnDefinition SharedSizeGroup="AgeReduction" />
+                    <ColumnDefinition SharedSizeGroup="MediaContact" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Rank" />
+                
+                <TextBlock Grid.Column="2" Text="ATHLETE" />
+                <TextBlock Grid.Column="3" Text="SPONSOR" />
+                <TextBlock Grid.Column="4" Text="AGE REDUCTION" />
+                <TextBlock Grid.Column="5" Text="MEDIA CONTACT" />
+            </Grid>
+        </Border>
+        <ItemsControl TextElement.FontSize="15">
+            <ItemsControl.Styles>
+                <Style Selector="ContentPresenter:nth-child(2n-1)">
+                    <Setter Property="Background" Value="#F7F9FB" />
+                </Style>
+                <Style Selector="ContentPresenter:nth-child(2n)">
+                    <Setter Property="Background" Value="White" />
+                </Style>
+            </ItemsControl.Styles>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="m:Athlete">
+                    <Grid Margin="30 30">
+                        <Grid.Styles>
+                            <Style Selector="TextBlock">
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </Grid.Styles>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="Rank" />
+                            <ColumnDefinition SharedSizeGroup="Picture" />
+                            <ColumnDefinition SharedSizeGroup="Athlete" />
+                            <ColumnDefinition SharedSizeGroup="Sponsor" />
+                            <ColumnDefinition SharedSizeGroup="AgeReduction" />
+                            <ColumnDefinition SharedSizeGroup="MediaContact" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Rank}" FontSize="20" FontWeight="Bold" />
+                        <views:AthletePicture Width="80" Height="80" Grid.Column="1" />
+                        <TextBlock Grid.Column="2" Text="{Binding Name}" TextDecorations="Underline" />
+                        <TextBlock Grid.Column="3" Text="{Binding Sponsor}" />
+                        <TextBlock Grid.Column="4" FontWeight="Bold" Foreground="{StaticResource Green}" Text="{Binding AgeReduction, StringFormat='{}{0:+0.0;-0.0} years'}" />
+                        <ContentControl Grid.Column="5" Content="{Binding MediaContact}" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsSource>
+                <generic:List x:TypeArguments="m:Athlete">
+                    <m:Athlete Name="Dariusz Kowalski" Rank="4" AgeReduction="-9.1" Picture="/Assets/dariusz_kowalski_profile.jpg" />
+                    <m:Athlete Name="Chen Wei" Rank="5" AgeReduction="-9.1" Picture="/Assets/chen_wei_profile.jpg" />
+                    <m:Athlete Name="Sophia Nakamura" Rank="6" AgeReduction="-7.7" Picture="/Assets/sophia_nakamura_profile.jpg" />
+                    <m:Athlete Name="Nikolai Volkov" Rank="7" AgeReduction="-5.2" Picture="/Assets/nikolai_volkov_profile.jpg" />
+                    <m:Athlete Name="Liam O'Connor" Rank="8" AgeReduction="-2.1" Picture="/Assets/liam_oconnor_profile.jpg" />
+                    <m:Athlete Name="Amelia Zhao" Rank="9" AgeReduction="-0.7" Picture="/Assets/amelia_zhao_profile.jpg" />
+                    <m:Athlete Name="Ethan Park " Rank="10" AgeReduction="4.1" Picture="/Assets/ethan_park_profile.jpg" />
+                </generic:List>
+            </ItemsControl.ItemsSource>
+        </ItemsControl>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:longevityWorldCup="clr-namespace:LongevityWorldCup"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="LongevityWorldCup.Views.AthletePicture" x:DataType="longevityWorldCup:Athlete">
+    <Viewbox>
+        <Panel>
+            <Image Height="100" Source="{Binding Picture}">
+                <Image.Clip>
+                    <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+                </Image.Clip>
+            </Image>
+            <Ellipse Width="100" Height="100" Stroke="#FF4081" StrokeThickness="2" />
+        </Panel>
+    </Viewbox>
+</UserControl>

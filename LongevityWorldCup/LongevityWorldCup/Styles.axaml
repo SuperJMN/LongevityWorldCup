@@ -105,7 +105,7 @@
         <Setter Property="ContentTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <Border CornerRadius="20" BoxShadow="-2 20 60 0 #22000000" Background="White" Margin="50" Padding="25">
+                    <Border CornerRadius="20" BoxShadow="-2 20 60 0 #22000000" Background="White" Margin="50" Padding="25 50">
                         <ContentPresenter x:DataType="x:Object" Content="{Binding}" />
                     </Border>
                 </DataTemplate>

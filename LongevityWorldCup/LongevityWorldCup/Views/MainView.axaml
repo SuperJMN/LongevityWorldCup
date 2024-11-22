@@ -9,7 +9,7 @@
              x:DataType="vm:MainViewModel">
 
     <UserControl.Resources>
-        
+
     </UserControl.Resources>
 
     <UserControl.Background>
@@ -39,19 +39,28 @@
                 </StackPanel>
             </UserControl>
             <Border Background="#F0F4F8">
-                <StackPanel>
+                <StackPanel Spacing="40">
                     <TextBlock TextAlignment="Center" Margin="40">
                         <TextBlock.Inlines>
                             <Run>Too old for your sport? Not this one! In the Longevity World Cup, you don't age out - you age in. Reverse your age and</Run>
                             <Run FontWeight="Bold">rise on the leaderboard!</Run>
                         </TextBlock.Inlines>
                     </TextBlock>
-                   <views:Podium Width="800" Height="350"></views:Podium>
+                    <views:Podium Width="800" Height="350"></views:Podium>
+
+                    <Border Width="1100" ClipToBounds="True" CornerRadius="30">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="80" Color="Gray" Opacity="0.4" />
+                        </Border.Effect>
+                        <views:Ranking />
+                    </Border>
+
                     <UserControl Classes="Badge" Width="900">
                         <StackPanel Spacing="20">
                             <TextBlock Classes="Header">Contribute</TextBlock>
                             <TextBlock>90% of your Bitcoin donations boost the prize pool for Longevity World Cup champions:</TextBlock>
                             <TextBlock Classes="Header">0.23 BTC of 1 BTC goal reached!</TextBlock>
+                            <Button Classes="Hyperlink" HorizontalAlignment="Center" Content="tbtc1q5zw0v70zszdhlm0lk7smn9xnhgdzvc88rksrml" />
                         </StackPanel>
                     </UserControl>
                     <UserControl Classes="Badge" Width="900">
