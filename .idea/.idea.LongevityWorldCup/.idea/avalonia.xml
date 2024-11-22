@@ -3,7 +3,12 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="LongevityWorldCup/LongevityWorldCup/App.axaml" value="LongevityWorldCup/LongevityWorldCup.Browser/LongevityWorldCup.Browser.csproj" />
+        <entry key="LongevityWorldCup/LongevityWorldCup/Styles.axaml" value="LongevityWorldCup/LongevityWorldCup.Browser/LongevityWorldCup.Browser.csproj" />
+        <entry key="LongevityWorldCup/LongevityWorldCup/Views/Leader.axaml" value="LongevityWorldCup/LongevityWorldCup.Desktop/LongevityWorldCup.Desktop.csproj" />
         <entry key="LongevityWorldCup/LongevityWorldCup/Views/MainView.axaml" value="LongevityWorldCup/LongevityWorldCup.Desktop/LongevityWorldCup.Desktop.csproj" />
+        <entry key="LongevityWorldCup/LongevityWorldCup/Views/MainWindow.axaml" value="LongevityWorldCup/LongevityWorldCup.Browser/LongevityWorldCup.Browser.csproj" />
+        <entry key="LongevityWorldCup/LongevityWorldCup/Views/Podium.axaml" value="LongevityWorldCup/LongevityWorldCup.Desktop/LongevityWorldCup.Desktop.csproj" />
       </map>
     </option>
   </component>

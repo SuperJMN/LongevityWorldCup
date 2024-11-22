@@ -24,9 +24,9 @@
     "ExecutableTarget": {
       "type": "string",
       "enum": [
-        "Clean",
-        "Compile",
-        "Restore"
+        "Publish",
+        "PublishSite",
+        "RestoreWorkloads"
       ]
     },
     "Verbosity": {
@@ -100,13 +100,17 @@
   "allOf": [
     {
       "properties": {
-        "Configuration": {
+        "Force": {
+          "type": "boolean"
+        },
+        "GitHubApiKey": {
           "type": "string",
-          "description": "Configuration to build - Default is 'Debug' (local) or 'Release' (server)",
-          "enum": [
-            "Debug",
-            "Release"
-          ]
+          "description": "GitHub Authentication Token",
+          "default": "Secrets must be entered via 'nuke :secrets [profile]'"
+        },
+        "Solution": {
+          "type": "string",
+          "description": "Path to a solution file that is automatically loaded"
         }
       }
     },

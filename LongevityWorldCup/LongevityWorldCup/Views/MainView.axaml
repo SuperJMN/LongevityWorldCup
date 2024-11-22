@@ -3,173 +3,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:LongevityWorldCup.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="450"
+             xmlns:views="clr-namespace:LongevityWorldCup.Views"
+             mc:Ignorable="d" d:DesignWidth="1200"
              x:Class="LongevityWorldCup.Views.MainView"
              x:DataType="vm:MainViewModel">
 
     <UserControl.Resources>
-        <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
-            <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
-            <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}" />
-            <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThemeThickness}" />
-            <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-            <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
-            <Setter Property="HorizontalAlignment" Value="Left" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="RenderTransform" Value="none" />
-            <Setter Property="Transitions">
-                <Transitions>
-                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
-                </Transitions>
-            </Setter>
-
-            <Setter Property="Template">
-                <ControlTemplate>
-                    <Border x:Name="PART_Root" Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
-                            Padding="{TemplateBinding Padding}">
-                        <ContentPresenter x:Name="PART_ContentPresenter"
-                                          Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}"
-                                          RecognizesAccessKey="True"
-                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-                    </Border>
-                </ControlTemplate>
-            </Setter>
-
-            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-                <!-- <Setter Property="Background" Value="{DynamicResource ButtonBackgroundPointerOver}" /> -->
-                <!-- <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrushPointerOver}" /> -->
-                <!-- <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundPointerOver}" /> -->
-            </Style>
-
-            <Style Selector="^:pressed">
-                <Setter Property="RenderTransform" Value="scale(0.98)" />
-            </Style>
-
-            <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                <!-- <Setter Property="Background" Value="{DynamicResource ButtonBackgroundPressed}" /> -->
-                <!-- <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrushPressed}" /> -->
-                <!-- <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundPressed}" /> -->
-            </Style>
-
-            <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-                <Setter Property="Background" Value="{DynamicResource ButtonBackgroundDisabled}" />
-                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrushDisabled}" />
-                <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundDisabled}" />
-            </Style>
-
-            <Style Selector="^.accent">
-                <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-                    <Setter Property="Background" Value="{DynamicResource AccentButtonBackground}" />
-                    <Setter Property="BorderBrush" Value="{DynamicResource AccentButtonBorderBrush}" />
-                    <Setter Property="Foreground" Value="{DynamicResource AccentButtonForeground}" />
-                </Style>
-
-                <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-                    <Setter Property="Background" Value="{DynamicResource AccentButtonBackgroundPointerOver}" />
-                    <Setter Property="BorderBrush" Value="{DynamicResource AccentButtonBorderBrushPointerOver}" />
-                    <Setter Property="Foreground" Value="{DynamicResource AccentButtonForegroundPointerOver}" />
-                </Style>
-
-                <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-                    <Setter Property="Background" Value="{DynamicResource AccentButtonBackgroundPressed}" />
-                    <Setter Property="BorderBrush" Value="{DynamicResource AccentButtonBorderBrushPressed}" />
-                    <Setter Property="Foreground" Value="{DynamicResource AccentButtonForegroundPressed}" />
-                </Style>
-
-                <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-                    <Setter Property="Background" Value="{DynamicResource AccentButtonBackgroundDisabled}" />
-                    <Setter Property="BorderBrush" Value="{DynamicResource AccentButtonBorderBrushDisabled}" />
-                    <Setter Property="Foreground" Value="{DynamicResource AccentButtonForegroundDisabled}" />
-                </Style>
-            </Style>
-        </ControlTheme>
+        
     </UserControl.Resources>
-
-    <UserControl.Styles>
-
-        <Style Selector="UserControl.Badge TextBlock">
-            <Setter Property="FontSize" Value="16"></Setter>
-        </Style>
-
-        <Style Selector="UserControl.Badge">
-            <Setter Property="ClipToBounds" Value="False" />
-            <Setter Property="ContentTemplate">
-                <Setter.Value>
-                    <DataTemplate>
-                        <Border CornerRadius="20" BoxShadow="-2 20 60 0 #22000000" Background="White" Margin="50" Padding="25">
-                            <ContentPresenter x:DataType="x:Object" Content="{Binding}" />
-                        </Border>
-                    </DataTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style Selector="TextBlock.Header">
-            <Setter Property="FontSize" Value="23" />
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="TextBlock.TextAlignment" Value="Center" />
-        </Style>
-
-        <Style Selector="TextBlock.Title">
-            <Setter Property="FontSize" Value="60"></Setter>
-            <Setter Property="Effect">
-                <Setter.Value>
-                    <DropShadowDirectionEffect
-                        ShadowDepth="20"
-                        Direction="20"
-                        Color="Black"
-                        Opacity="0.5"
-                        BlurRadius="5" />
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style Selector="Button:pointerover">
-            <Setter Property="RenderTransform" Value="scaleY(1.05)scaleX(1.05)" />
-        </Style>
-
-        <Style Selector="Button">
-            <Setter Property="Transitions">
-                <Setter.Value>
-                    <Transitions>
-                        <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.5" />
-                    </Transitions>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style Selector="Button.Big">
-            <Setter Property="ClipToBounds" Value="False" />
-            <Setter Property="Background" Value="#57B45B" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Padding" Value="25 15" />
-            <Setter Property="CornerRadius" Value="50" />
-        </Style>
-        
-        <Style Selector="Button.Big Border#PART_Root">
-            <Setter Property="BoxShadow" Value="-2 5 10 0 #44000000" />
-        </Style>
-        
-        <Style Selector="Button.Big:pointerover">
-            <Setter Property="Background" Value="#01A017"></Setter>
-            <Setter Property="Foreground" Value="White" />
-        </Style>
-
-        <Style Selector="Button.Shadowed">
-            <Setter Property="ClipToBounds" Value="False" />
-        </Style>
-        
-        <Style Selector="Button.Shadowed Border#PART_Root">
-            <Setter Property="BoxShadow" Value="-2 5 10 0 #44000000" />
-        </Style>
-        
-    </UserControl.Styles>
 
     <UserControl.Background>
         <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
@@ -184,7 +25,7 @@
                 <StackPanel HorizontalAlignment="Center" Spacing="20" Margin="30">
                     <TextBlock Text="Longevity World Cup 2025" Classes="Title" />
                     <TextBlock Text="Race To Longevity Escape Velocity 🚀" />
-                    <Button Classes="Big" HorizontalAlignment="Center" Margin="0 20 0 20">
+                    <Button Classes="Big" Background="{StaticResource Green}" HorizontalAlignment="Center" Margin="0 20 0 20">
                         <Button.Content>
                             <TextBlock>
                                 <TextBlock.Inlines>
@@ -205,51 +46,35 @@
                             <Run FontWeight="Bold">rise on the leaderboard!</Run>
                         </TextBlock.Inlines>
                     </TextBlock>
-                    <UserControl>
-                        <WrapPanel HorizontalAlignment="Center" ItemWidth="300">
-                            <Button Classes="Shadowed" Background="White" HorizontalAlignment="Stretch" Height="350" Margin="20">
-                                <DockPanel>
-                                    <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
-                                        <TextBlock Text="(0.00072578 BTC)" />
-                                        <TextBlock FontWeight="Bold" FontSize="30" Foreground="#4CAF50" Text="$20.16" />
-                                    </StackPanel>
-                                    <Image Height="100" Source="/Assets/isabella_rodriguez_profile.jpg" />
-                                </DockPanel>
-                            </Button>
-                            <Button Classes="Shadowed" Background="White" HorizontalAlignment="Stretch" Height="350" Margin="20">
-                                <DockPanel>
-                                    <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
-                                        <TextBlock Text="(0.00072578 BTC)" />
-                                        <TextBlock FontWeight="Bold" FontSize="30" Foreground="#4CAF50" Text="$20.16" />
-                                    </StackPanel>
-                                    <Image Height="100" Source="/Assets/isabella_rodriguez_profile.jpg" />
-                                </DockPanel>
-                            </Button>
-                            <Button Classes="Shadowed" Background="White" HorizontalAlignment="Stretch" Height="350" Margin="20">
-                                <DockPanel>
-                                    <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
-                                        <TextBlock Text="(0.00072578 BTC)" />
-                                        <TextBlock FontWeight="Bold" FontSize="30" Foreground="#4CAF50" Text="$20.16" />
-                                    </StackPanel>
-                                    <Image Height="100" Source="/Assets/isabella_rodriguez_profile.jpg" />
-                                </DockPanel>
-                            </Button>
-                        </WrapPanel>
-                    </UserControl>
-                    <UserControl Classes="Badge">
+                   <views:Podium Width="800" Height="350"></views:Podium>
+                    <UserControl Classes="Badge" Width="900">
                         <StackPanel Spacing="20">
                             <TextBlock Classes="Header">Contribute</TextBlock>
                             <TextBlock>90% of your Bitcoin donations boost the prize pool for Longevity World Cup champions:</TextBlock>
                             <TextBlock Classes="Header">0.23 BTC of 1 BTC goal reached!</TextBlock>
                         </StackPanel>
                     </UserControl>
-                    <UserControl Classes="Badge">
+                    <UserControl Classes="Badge" Width="900">
                         <StackPanel Spacing="20">
                             <TextBlock Classes="Header">Once/Year Newsletter</TextBlock>
-                            <TextBlock>Want to know who wins? Get last year’s winner and next year’s competition announcements — no spam, just the essentials.</TextBlock>
+                            <TextBlock TextWrapping="Wrap">Want to know who wins? Get last year’s winner and next year’s competition announcements — no spam, just the essentials.</TextBlock>
                         </StackPanel>
                     </UserControl>
                 </StackPanel>
+            </Border>
+            <Border Background="{StaticResource AlmostBlack}" TextElement.Foreground="White">
+                <UniformGrid Columns="2" Height="100" Width="200" Margin="20" HorizontalAlignment="Center">
+                    <TextBlock>GitHub</TextBlock>
+                    <TextBlock>X</TextBlock>
+                    <TextBlock>History</TextBlock>
+                    <TextBlock>Reddit</TextBlock>
+                    <TextBlock>Ruleset</TextBlock>
+                    <TextBlock>TikTok</TextBlock>
+                    <TextBlock>Contact</TextBlock>
+                    <TextBlock>Facebook</TextBlock>
+                    <TextBlock>Podcast</TextBlock>
+                    <TextBlock>Instagram</TextBlock>
+                </UniformGrid>
             </Border>
         </StackPanel>
     </ScrollViewer>

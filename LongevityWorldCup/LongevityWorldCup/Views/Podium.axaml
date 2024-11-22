@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:LongevityWorldCup.Views"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="380"
+             x:Class="LongevityWorldCup.Views.Podium">
+    <UniformGrid Rows="1">
+        <UniformGrid.Styles>
+            <Style Selector="views|Leader">
+                <Setter Property="Margin" Value="20"></Setter>
+            </Style>
+        </UniformGrid.Styles>
+        <views:Leader  />
+        <views:Leader  />
+        <views:Leader  />
+    </UniformGrid>
+</UserControl>

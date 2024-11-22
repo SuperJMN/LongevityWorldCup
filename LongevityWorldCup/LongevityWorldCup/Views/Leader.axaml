@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="240"
+             x:Class="LongevityWorldCup.Views.Leader" d:DesignHeight="400" ClipToBounds="False">
+    <Button CornerRadius="30" Classes="Shadowed" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Panel>
+            <DockPanel>
+                <StackPanel x:Name="Earned" DockPanel.Dock="Bottom" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
+                    <TextBlock FontSize="12" Text="(0.00072578 BTC)" />
+                    <TextBlock Foreground="{StaticResource Green}" FontWeight="Bold" FontSize="30" Text="$20.16" />
+                </StackPanel>
+                <StackPanel Margin="0 25 0 0 " x:Name="Profile" Spacing="15">
+                    <Panel>
+                        <Image Height="100" Source="/Assets/isabella_rodriguez_profile.jpg">
+                            <Image.Clip>
+                                <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+                            </Image.Clip>
+                        </Image>
+                        <Ellipse Width="100" Height="100" Stroke="#FF4081" StrokeThickness="2" />
+                    </Panel>
+                    <StackPanel HorizontalAlignment="Center">
+                        <Button Classes="Hyperlink" HorizontalAlignment="Center" Background="Transparent" BorderThickness="0">Isabella Rodriguez</Button>
+                        <TextBlock>
+                            <TextBlock.Inlines>
+                                <Run FontWeight="Bold" Foreground="{StaticResource Green}" Text="16.3 years" />
+                                <Run Text="reduced" />
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+            <Panel x:Name="Medal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-20 -20">
+                <Ellipse Width="80" Height="80" Fill="White">
+                    <Ellipse.Effect>
+                        <DropShadowEffect Opacity="0.1" BlurRadius="20" />
+                    </Ellipse.Effect>
+                </Ellipse>
+                <TextBlock FontSize="40" TextAlignment="Center" VerticalAlignment="Center">🥈</TextBlock>
+            </Panel>
+        </Panel>
+    </Button>
+</UserControl>
