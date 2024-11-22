@@ -5,7 +5,6 @@ riderModule.iml
 /_ReSharper.Caches/
 
 # Compiled binaries and build artifacts
-/build/
 */bin/
 */obj/
 
