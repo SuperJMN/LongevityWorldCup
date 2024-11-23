@@ -5,6 +5,11 @@
              xmlns:longevityWorldCup="clr-namespace:LongevityWorldCup"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="LongevityWorldCup.Views.AthletePicture" x:DataType="longevityWorldCup:Athlete">
+    
+    <Design.DataContext>
+        <longevityWorldCup:Athlete Name="Isabella Rodriguez" AgeReduction="16.3" Picture="/Assets/isabella_rodriguez_profile.jpg" />
+    </Design.DataContext>
+    
     <Viewbox>
         <Panel>
             <Image Height="100" Source="{Binding Picture}">

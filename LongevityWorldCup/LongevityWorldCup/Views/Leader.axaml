@@ -7,7 +7,7 @@
              x:Class="LongevityWorldCup.Views.Leader" d:DesignHeight="400" ClipToBounds="False" x:DataType="longevityWorldCup:Athlete">
     
     <Design.DataContext>
-        <longevityWorldCup:Athlete Name="Isabella Rodriguez" Picture="/Assets/isabella_rodriguez_profile.jpg.jpg" />
+        <longevityWorldCup:Athlete Name="Isabella Rodriguez" Picture="/Assets/isabella_rodriguez_profile.jpg" />
     </Design.DataContext>
     
     <Button CornerRadius="30" Classes="Shadowed" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
